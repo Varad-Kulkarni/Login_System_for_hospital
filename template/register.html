@@ -1,0 +1,147 @@
+<html>
+
+<head>
+  <title>Signup Page</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: white;
+    }
+
+    button {
+      background-color: #ffe600;
+      width: 25%;
+      padding: 15px;
+      color: black;
+      border: none;
+      float: center;
+      font-size: 15px;
+    }
+
+    label {
+      font-size: 20px;
+    }
+
+    form {
+      border: 3px solid #f1f1f1;
+    }
+
+    input[type=email],
+    input[type=text],
+    input[type=password] {
+      width: 50%;
+      font-size: 15px;
+      margin: 8px 0px;
+      padding: 12px 20px;
+      display: inline-block;
+      border: 2px solid #ffe600;
+      box-sizing: border-box;
+    }
+
+    input[type=radio] {
+      height: 18px;
+      width: 18px;
+    }
+
+    button:hover {
+      opacity: 0.7;
+
+    }
+
+    .container {
+      padding: 50px;
+      background-color: white;
+    }
+
+    .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+    }
+
+    img.avatar {
+      width: 10%;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <center>
+    <h1>Registration form</h1>
+  </center>
+  <form action="#" method="post">
+    {% csrf_token %}
+    <center>
+      <div class="container">
+        <label for='first_name'><b>First Name : </b></label>
+        <input type='text' placeholder="Enter your first name" name='f_name' required><br>
+
+        <label for='last_name'><b>Last Name :</b></label>
+        <input type='text' placeholder='Enter your last name' name='l_name' required><br>
+
+        <label for='profile_picture'><b>Profile picture :</b></label>
+        <input type='text' placeholder='Upload profile picture' name='p_picture' required><br>
+
+        <label for='first_name'><b>Username : </b></label>
+        <input type='text' placeholder="Enter your username" name='u_name' required><br><hr>
+
+        <label for='email'><b>Email Id : </b></label>
+        <input type="email" placeholder="Enter email" name="email" float="right" required><br>
+
+        <label for='first_name'><b>Password : </b></label>
+        <input type='password' placeholder="Enter your password" id="password" name='password' required><br>
+
+        <label for='first_name'><b>Confirm password : </b>
+          </label>
+        <input type='password' placeholder="Confirm password" id="confirm_password" onkeyup="check()" name='confirm_password' required>
+        <span id='message'></span>
+        <br>
+        <hr>
+
+        <label for='first_name'><b>Address : </b></label>
+        <input type='text' placeholder="Enter your Address" name='address' required><br>
+
+        <label for='first_name'><b>State : </b></label>
+        <input type='text' placeholder="Enter your State" name='state' required><br>
+
+        <label for='first_name'><b>City : </b></label>
+        <input type='text' placeholder="Enter your City" name='city' required><br>
+
+        <label for='first_name'><b>Pincode : </b></label>
+        <input type='text' placeholder="Enter your Pincode" name='pincode' required><br>
+
+        <!-- <label for='password'><b>Password : </b></label>
+        <input type="password" placeholder="Enter Password" name="password" required><br>
+
+        <label for='password'><b>Password : </b></label>
+        <input type="password" placeholder="Enter Password" name="password" required><br> -->
+        
+        <!-- <label for='email'><b>Email Id : </b></label>
+        <input type="email" placeholder="Enter email" name="email" float="right" required><br> -->
+
+        <!-- <label for='password'><b>Confirm Password : </b></label>
+          <input type="password" placeholder="Enter Password" id="confirm_password" name="confirm_password"
+            onkeyup="check();" required><br>
+          <span id='message'></span> -->
+
+        <button type="submit"><b>Signup</b></button><br>
+        Already an accounct <a href="http://localhost:8000/signin/"> Login </a>
+      </div>
+    </center>
+  </form>
+
+  <script>
+    var check = function () {
+      if (document.getElementById('password').value == document.getElementById('confirm_password').value) {
+        document.getElementById('message').style.color = 'green';
+        document.getElementById('message').innerHTML = 'matching';
+      }
+      else {
+        document.getElementById('message').style.color = 'red';
+        document.getElementById('message').innerHTML = 'not matching';
+      }
+    }
+  </script>
+</body>
+
+</html>
